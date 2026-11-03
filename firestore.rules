@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Lab exercise: open access to the students collection only
+    match /students/{studentId} {
+      allow read, write: if true;
+    }
+  }
+}
